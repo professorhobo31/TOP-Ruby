@@ -44,4 +44,20 @@ name = "Odin"
 puts "Hello, #{name}" #=> "Hello, Odin"
 puts 'Hello, #{name}' #=> "Hello, #{name}"  //puts is a similar method to print but it automatically adds an endline after the string we pass it
 
+#We can find the methods for all strings in the documentation (https://docs.ruby-lang.org/en/3.3/String.html). We should remember that for all types of data, in Ruby: that there are a lot of default methods and the documentation is a good place to find them. Some of the most useful *string* methods are .capitalize, .upcase, .include?, .length, .reverse. Our extension should help also remember the methods of most data types
+"he77o".sub("7", "l")           #=> "hel7o"
+
+"he77o".gsub("7", "l")          #=> "hello"
+
+"hello".insert(-1, " dude")     #=> "hello dude"
+
+"hello world".delete("l")       #=> "heo word"
+
+"!".prepend("hello, ", "world") #=> "hello, world!"
+
+"hello world".reverse           #-> "dlrow olleh"
+#Symbols are a performance-enhancing twist on strings. They are stored in memory using the same object ID instead of taking a new space in memory each time the same string is stored. 
+
+#Booleans in Ruby are True, False and Nil. This last one represents "nothing" or "empty" 
+
 
