@@ -3,4 +3,45 @@
 #HOWEVER, whenever we declare a class we should use PascalCase instead, ending up with stuff like MyFirstClass.
 #Sort of unrelated, but the API acronym may also refer to docummentation in certain circles.  
 
-#Before anything we have to install ruby.
+#Before anything we have to install ruby. Ruby on rails is supposed to be a bit messy to install. For now we should go to "https://www.theodinproject.com/lessons/ruby-installing-ruby" and follow the instructions to a T. If working in VSCode we should also install Ruby LSP extension
+
+#Some initial pointers in Ruby. It is very object-oriented, absolutely everything in Ruby is an object, even the most basic data types. For numbers, we have the usual operators but we need to keep in mind the fact that operating between two ints won't yield a float (17/5 -> 3) and at least one of the numbers should be a float (17/5.0 -> 3.4). A good example of using objects and numbers in Ruby is how we change from an int to a float and vice versa:
+#13.to_f  ->  13.0
+#13.0.to_i  ->  13
+#Notice how we treat the number as an object and the conversions are called as we would previously call methods on our custom objects in JS. This is actually what's happening, and other useful number methods Ruby has are ".even?" and ".odd?" 
+
+#Strings can be formed with either double "" or single'' quotation marks, also known as string literals. They are pretty similar, but there are some differences. Specifically, string interpolation and the escape characters both only work inside double quotation marks, not single quotation marks.
+#There are many ways to concatenate: 
+# With the plus operator:
+"Welcome " + "to " + "Odin!"    #=> "Welcome to Odin!"
+
+# With the shovel operator:
+"Welcome " << "to " << "Odin!"  #=> "Welcome to Odin!"
+
+# With the concat method:
+"Welcome ".concat("to ").concat("Odin!")  #=> "Welcome to Odin!"
+
+#We can slice substrings easily, like we would items in an array:
+"hello"[0]      #=> "h"
+
+"hello"[0..1]   #=> "he"  this uses a range from 0 to 1
+
+"hello"[0, 4]   #=> "hell"  string[start, length]. This is like doing string[0..3]
+
+"hello"[-1]     #=> "o"
+#The escape characters we can use: 
+#\\  #=> Need a backslash in your string?
+#\b  #=> Backspace
+#\r  #=> Carriage return, for those of you that love typewriters
+#\n  #=> Newline. You'll likely use this one the most.
+#\s  #=> Space
+#\t  #=> Tab
+#\"  #=> Double quotation mark
+#\'  #=> Single quotation mark
+#We can also do string interpolation, where we pass strings stored in a variable to our code but we have to remember these things only work with "" not '':
+name = "Odin"
+
+puts "Hello, #{name}" #=> "Hello, Odin"
+puts 'Hello, #{name}' #=> "Hello, #{name}"  //puts is a similar method to print but it automatically adds an endline after the string we pass it
+
+
